@@ -928,7 +928,153 @@ export const pythonModules: Module[] = [
     ]
   },
   {
-    id: "data-structures",
+    id: "while-loops",
+    title: { en: "While Loops", hi: "While Loops" },
+    description: { en: "Learn while loops and loop control", hi: "While loops aur loop control sikhein" },
+    icon: "⏳",
+    color: "#F97316",
+    lessons: [
+      {
+        id: "while-basics",
+        title: { en: "While Loop Basics", hi: "While Loop Basics" },
+        description: { en: "Understanding while loops", hi: "While loops samajhna" },
+        subLessons: [
+          {
+            id: "intro-to-while",
+            title: { en: "What is While Loop?", hi: "While Loop kya hai?" },
+            content: {
+              en: "While loop tab tak chalega jab tak condition true hai.\n\nFor loop ke jaise hi hai, lekin for loop mein hum pehle se jaante hain kitni baar chalna hai, while loop mein condition ke according chalega.\n\nSyntax:\nwhile condition:\n    # ye code chalega jab tak condition true hai",
+              hi: "While loop tab tak chalega jab tak condition true hai.\n\nFor loop ke jaise hi hai, lekin for loop mein hum pehle se jaante hain kitni baar chalna hai, while loop mein condition ke according chalega.\n\nSyntax:\nwhile condition:\n    # ye code chalega jab tak condition true hai"
+            },
+            codeExample: {
+              en: "# While loop example\ncount = 1\n\nwhile count <= 5:\n    print(\"Count is:\", count)\n    count = count + 1\n\nprint(\"Loop finished!\")",
+              hi: "# While loop example\ncount = 1\n\nwhile count <= 5:\n    print(\"Count hai:\", count)\n    count = count + 1\n\nprint(\"Loop khatam!\")"
+            },
+            output: {
+              en: "Count is: 1\nCount is: 2\nCount is: 3\nCount is: 4\nCount is: 5\nLoop finished!",
+              hi: "Count hai: 1\nCount hai: 2\nCount hai: 3\nCount hai: 4\nCount hai: 5\nLoop khatam!"
+            },
+            explanation: {
+              en: "While loop keeps running as long as the condition is True. Important: Always update the variable inside the loop to avoid infinite loops!",
+              hi: "While loop chalega jab tak condition True hai. Important: Hamesha variable update karo infinite loop se bachne ke liye!"
+            },
+            quiz: [
+              {
+                question: {
+                  en: "How many times will this loop run? i = 1\nwhile i < 3:\n    print(i)\n    i = i + 1",
+                  hi: "Ye loop kitni baar chalega? i = 1\nwhile i < 3:\n    print(i)\n    i = i + 1"
+                },
+                options: [
+                  { en: "2 times", hi: "2 baar" },
+                  { en: "3 times", hi: "3 baar" },
+                  { en: "Infinite", hi: "Infinite" },
+                  { en: "0 times", hi: "0 baar" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "countdown-while",
+            title: { en: "Countdown Timer", hi: "Countdown Timer" },
+            description: { en: "Create a countdown using while loop", hi: "While loop se countdown banao" },
+            starterCode: {
+              en: "# Create countdown from 10 to 1\ncount = 10\n\n# Use while loop to count down\n\nprint(\"Liftoff!\")",
+              hi: "# 10 se 1 tak countdown banao\ncount = 10\n\n# While loop use karo\n\nprint(\"Liftoff!\")"
+            },
+            solution: {
+              en: "count = 10\nwhile count > 0:\n    print(count)\n    count = count - 1\nprint(\"Liftoff!\")",
+              hi: "count = 10\nwhile count > 0:\n    print(count)\n    count = count - 1\nprint(\"Liftoff!\")"
+            },
+            expectedOutput: {
+              en: "10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nLiftoff!",
+              hi: "10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nLiftoff!"
+            },
+            hints: [
+              { en: "Use count > 0 condition", hi: "count > 0 condition use karo" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "tuples",
+    title: { en: "Tuples", hi: "Tuples" },
+    description: { en: "Learn about tuples - immutable sequences", hi: "Tuples ke baare mein sikhein - immutable sequences" },
+    icon: "📋",
+    color: "#14B8A6",
+    lessons: [
+      {
+        id: "tuple-basics",
+        title: { en: "Tuple Basics", hi: "Tuple Basics" },
+        description: { en: "Creating and using tuples", hi: "Tuples banaana aur use karna" },
+        subLessons: [
+          {
+            id: "what-is-tuple",
+            title: { en: "What is a Tuple?", hi: "Tuple kya hai?" },
+            content: {
+              en: "Tuple ek aisa data type hai jisme multiple values store karte hain, jaise list. Lekin tuple immutable hai - matlab ek baar banana ke baad badla nahi ja sakta.\n\nTuple () brackets mein banata hai. List [] brackets ke bajaye.\n\nWhy use tuples? - Data ko protect karna - Faster than lists - Function mein multiple values return karne ke liye",
+              hi: "Tuple ek aisa data type hai jisme multiple values store karte hain, jaise list. Lekin tuple immutable hai - matlab ek baar banana ke baad badla nahi ja sakta.\n\nTuple () brackets mein banata hai. List [] brackets ke bajaye.\n\nWhy use tuples? - Data ko protect karna - Lists se tez - Function mein multiple values return karne ke liye"
+            },
+            codeExample: {
+              en: "# Creating a tuple\ncoordinates = (10, 20)\nprint(\"Coordinates:\", coordinates)\n\n# Tuple with different types\nperson = (\"Alice\", 25, \"USA\")\nprint(\"Person:\", person)\n\n# Single element tuple (note the comma)\nsingle = (1,)\nprint(\"Single:\", single)\n\n# Empty tuple\nempty = ()\nprint(\"Empty:\", empty)",
+              hi: "# Tuple bana rahe hain\ncoordinates = (10, 20)\nprint(\"Coordinates:\", coordinates)\n\n# Alag types wala tuple\nperson = (\"Alice\", 25, \"USA\")\nprint(\"Person:\", person)\n\n# Ek element wala tuple (comma important)\nsingle = (1,)\nprint(\"Single:\", single)\n\n# Khali tuple\nempty = ()\nprint(\"Empty:\", empty)"
+            },
+            output: {
+              en: "Coordinates: (10, 20)\nPerson: ('Alice', 25, 'USA')\nSingle: (1,)\nEmpty: ()",
+              hi: "Coordinates: (10, 20)\nPerson: ('Alice', 25, 'USA')\nSingle: (1,)\nEmpty: ()"
+            },
+            explanation: {
+              en: "Tuples are immutable - you cannot change, add, or remove elements after creation. Use tuples when you want to protect data from accidental changes.",
+              hi: "Tuples immutable hain - aap create hone ke baad change, add ya remove nahi kar sakte. Tuples use karo jab data ko accidental changes se protect karna ho."
+            },
+            quiz: [
+              {
+                question: {
+                  en: "How do you create a tuple?",
+                  hi: "Tuple kaise create karte hain?"
+                },
+                options: [
+                  { en: "()", hi: "()" },
+                  { en: "[]", hi: "[]" },
+                  { en: "{}", hi: "{}" },
+                  { en: "<>", hi: "<>" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "coordinates-tuple",
+            title: { en: "Coordinates", hi: "Coordinates" },
+            description: { en: "Work with coordinate tuples", hi: "Coordinate tuples ke saath kaam karo" },
+            starterCode: {
+              en: "# Create a tuple for (x, y) coordinates\npoint = (5, 10)\n\n# Access x and y values\n\nprint(\"Point:\", point)\nprint(\"X:\", )\nprint(\"Y:\", )",
+              hi: "# (x, y) coordinates ke liye tuple banao\npoint = (5, 10)\n\n# x aur y values access karo\n\nprint(\"Point:\", point)\nprint(\"X:\", )\nprint(\"Y:\", )"
+            },
+            solution: {
+              en: "point = (5, 10)\nx = point[0]\ny = point[1]\nprint(\"Point:\", point)\nprint(\"X:\", x)\nprint(\"Y:\", y)",
+              hi: "point = (5, 10)\nx = point[0]\ny = point[1]\nprint(\"Point:\", point)\nprint(\"X:\", x)\nprint(\"Y:\", y)"
+            },
+            expectedOutput: {
+              en: "Point: (5, 10)\nX: 5\nY: 10",
+              hi: "Point: (5, 10)\nX: 5\nY: 10"
+            },
+            hints: [
+              { en: "Use index 0 for x and 1 for y", hi: "x ke liye index 0 aur y ke liye 1 use karo" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "dictionaries",
     title: { en: "Data Structures", hi: "Data Structures" },
     description: { en: "Lists, Tuples, Dictionaries", hi: "Lists, Tuples, Dictionaries" },
     icon: "📚",
@@ -1325,5 +1471,358 @@ export const pythonModules: Module[] = [
         ]
       }
     ]
+  },
+  {
+    id: "sets",
+    title: { en: "Sets", hi: "Sets" },
+    description: { en: "Learn about sets - unique collections", hi: "Sets ke baare mein sikhein - unique collections" },
+    icon: "🎯",
+    color: "#EF4444",
+    lessons: [
+      {
+        id: "set-basics",
+        title: { en: "Set Basics", hi: "Set Basics" },
+        description: { en: "Creating and using sets", hi: "Sets banaana aur use karna" },
+        subLessons: [
+          {
+            id: "what-is-set",
+            title: { en: "What is a Set?", hi: "Set kya hai?" },
+            content: {
+              en: "Set ek aisa collection hai jisme sirf unique values hoti hain. Duplicate values automatic remove ho jate hain.\n\nSet {} curly brackets mein banata hai, jaise dictionary. Lekin sets mein sirf values hoti hain, keys nahi.\n\nUse cases: - Duplicates hataana - Unique items find karna - Math ke set operations (union, intersection)",
+              hi: "Set ek aisa collection hai jisme sirf unique values hoti hain. Duplicate values automatic remove ho jate hain.\n\nSet {} curly brackets mein banata hai, jaise dictionary. Lekin sets mein sirf values hoti hain, keys nahi.\n\nUse cases: - Duplicates hataana - Unique items find karna - Math ke set operations (union, intersection)"
+            },
+            codeExample: {
+              en: "# Creating a set\nfruits = {\"apple\", \"banana\", \"cherry\", \"apple\"}\nprint(\"Fruits set:\", fruits)\n\n# Empty set (note: use set(), not {})\nempty = set()\nprint(\"Empty set:\", empty)\n\n# Set with unique numbers\nnumbers = {1, 2, 3, 3, 4, 4, 5}\nprint(\"Numbers:\", numbers)",
+              hi: "# Set bana rahe hain\nfruits = {\"apple\", \"banana\", \"cherry\", \"apple\"}\nprint(\"Fruits set:\", fruits)\n\n# Khali set (note: use set(), not {})\nempty = set()\nprint(\"Khali set:\", empty)\n\n# Unique numbers wala set\nnumbers = {1, 2, 3, 3, 4, 4, 5}\nprint(\"Numbers:\", numbers)"
+            },
+            output: {
+              en: "Fruits set: {'banana', 'cherry', 'apple'}\nEmpty set: set()\nNumbers: {1, 2, 3, 4, 5}",
+              hi: "Fruits set: {'banana', 'cherry', 'apple'}\nKhali set: set()\nNumbers: {1, 2, 3, 4, 5}"
+            },
+            explanation: {
+              en: "Sets automatically remove duplicates. Sets are unordered - you cannot rely on the order of elements. Use sets when you need only unique values.",
+              hi: "Sets automatic duplicates remove kar dete hain. Sets unordered hain - elements ka order guarantee nahi. Sets use karo jab sirf unique values chahiye."
+            },
+            quiz: [
+              {
+                question: {
+                  en: "What happens if you add duplicate to a set?",
+                  hi: "Agar set mein duplicate add karo toh kya hoga?"
+                },
+                options: [
+                  { en: "Duplicate is ignored", hi: "Duplicate ignore ho jayega" },
+                  { en: "Error occurs", hi: "Error aayega" },
+                  { en: "Set has two copies", hi: "Set mein do copies honge" },
+                  { en: "Nothing happens", hi: "Kuch nahi hoga" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "unique-numbers",
+            title: { en: "Find Unique Numbers", hi: "Unique Numbers Find Karo" },
+            description: { en: "Find unique numbers from a list", hi: "List se unique numbers find karo" },
+            starterCode: {
+              en: "# Find unique numbers from this list\nnumbers = [1, 2, 2, 3, 3, 3, 4, 4, 5, 5]\n\n# Convert list to set to get unique numbers\nunique = \n\nprint(\"Original:\", numbers)\nprint(\"Unique:\", unique)",
+              hi: "# Is list se unique numbers find karo\nnumbers = [1, 2, 2, 3, 3, 3, 4, 4, 5, 5]\n\n# List ko set mein convert karo\nunique = \n\nprint(\"Original:\", numbers)\nprint(\"Unique:\", unique)"
+            },
+            solution: {
+              en: "numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5, 5]\nunique = set(numbers)\nprint(\"Original:\", numbers)\nprint(\"Unique:\", unique)",
+              hi: "numbers = [1, 2, 2, 3, 3, 3, 4, 4, 5, 5]\nunique = set(numbers)\nprint(\"Original:\", numbers)\nprint(\"Unique:\", unique)"
+            },
+            expectedOutput: {
+              en: "Original: [1, 2, 2, 3, 3, 3, 4, 4, 5, 5]\nUnique: {1, 2, 3, 4, 5}",
+              hi: "Original: [1, 2, 2, 3, 3, 3, 4, 4, 5, 5]\nUnique: {1, 2, 3, 4, 5}"
+            },
+            hints: [
+              { en: "Use set() to convert list to set", hi: "List ko set mein convert karne ke liye set() use karo" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "advanced-functions",
+    title: { en: "Advanced Functions", hi: "Advanced Functions" },
+    description: { en: "Return values, args, kwargs, scope, docstrings", hi: "Return values, args, kwargs, scope, docstrings" },
+    icon: "🔧",
+    color: "#8B5CF6",
+    lessons: [
+      {
+        id: "return-values",
+        title: { en: "Return Values", hi: "Return Values" },
+        description: { en: "Return values from functions", hi: "Functions se values return karo" },
+        subLessons: [
+          {
+            id: "what-is-return",
+            title: { en: "What is Return?", hi: "Return kya hai?" },
+            content: {
+              en: "Return statement function se value wapas bhejta hai. Jab function apna kaam khatam kare, toh return use karke result de sakta hai.\n\nReturn ke baad function ka execution band ho jata hai.",
+              hi: "Return statement function se value wapas bhejta hai. Jab function apna kaam khatam kare, toh return use karke result de sakta hai."
+            },
+            codeExample: {
+              en: "def add(a, b):\n    return a + b\n\nresult = add(5, 3)\nprint(\"Sum is:\", result)",
+              hi: "def add(a, b):\n    return a + b\n\nresult = add(5, 3)\nprint(\"Jod hai:\", result)"
+            },
+            output: {
+              en: "Sum is: 8",
+              hi: "Jod hai: 8"
+            },
+            explanation: {
+              en: "Return sends value back from function.",
+              hi: "Return function se value wapas bhejta hai."
+            },
+            quiz: [
+              {
+                question: { en: "What does return do?", hi: "Return kya karta hai?" },
+                options: [
+                  { en: "Sends value back", hi: "Value wapas bhejta hai" },
+                  { en: "Prints value", hi: "Value print karta hai" },
+                  { en: "Ends program", hi: "Program khatam karta hai" },
+                  { en: "Creates variable", hi: "Variable banata hai" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "calculator-return",
+            title: { en: "Calculator with Return", hi: "Return Wala Calculator" },
+            description: { en: "Create function that returns", hi: "Return karne wala function banao" },
+            starterCode: { en: "def add(a, b): pass\nresult = add(10, 20)\nprint(\"10 + 20 =\", result)", hi: "def add(a, b): pass\nresult = add(10, 20)\nprint(\"10 + 20 =\", result)" },
+            solution: { en: "def add(a, b): return a + b\nresult = add(10, 20)\nprint(\"10 + 20 =\", result)", hi: "def add(a, b): return a + b\nresult = add(10, 20)\nprint(\"10 + 20 =\", result)" },
+            expectedOutput: { en: "10 + 20 = 30", hi: "10 + 20 = 30" },
+            hints: [{ en: "Use return a + b", hi: "return a + b use karo" }]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "files",
+    title: { en: "Files", hi: "Files" },
+    description: { en: "Reading and writing files", hi: "Files read aur write karna" },
+    icon: "📁",
+    color: "#84CC16",
+    lessons: [
+      {
+        id: "file-basics",
+        title: { en: "File Basics", hi: "File Basics" },
+        description: { en: "Working with files", hi: "Files ke saath kaam karna" },
+        subLessons: [
+          {
+            id: "reading-files",
+            title: { en: "Reading Files", hi: "Files Padhna" },
+            content: {
+              en: "Python mein files ko read karne ke liye open() function use karte hain. File ko open karte waqt mode specify karte hain - 'r' for read, 'w' for write.",
+              hi: "Python mein files ko read karne ke liye open() function use karte hain. File ko open karte waqt mode specify karte hain - 'r' for read, 'w' for write."
+            },
+            codeExample: {
+              en: "from io import StringIO\ncontent = \"Line 1\nLine 2\nLine 3\"\nfile = StringIO(content)\ndata = file.read()\nprint(data)",
+              hi: "from io import StringIO\ncontent = \"Line 1\nLine 2\nLine 3\"\nfile = StringIO(content)\ndata = file.read()\nprint(data)"
+            },
+            output: {
+              en: "Line 1\nLine 2\nLine 3",
+              hi: "Line 1\nLine 2\nLine 3"
+            },
+            explanation: {
+              en: "Use read() method to read entire file content.",
+              hi: "Poora file content padhne ke liye read() method use karo."
+            },
+            quiz: [
+              {
+                question: {
+                  en: "Which mode opens a file for reading?",
+                  hi: "Konsa mode file read karne ke liye hai?"
+                },
+                options: [
+                  { en: "'r'", hi: "'r'" },
+                  { en: "'w'", hi: "'w'" },
+                  { en: "'a'", hi: "'a'" },
+                  { en: "'x'", hi: "'x'" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "file-read",
+            title: { en: "Read a File", hi: "File Padho" },
+            description: { en: "Read content from a file", hi: "File se content padho" },
+            starterCode: {
+              en: "from io import StringIO\ncontent = \"Hello World\"\nfile = StringIO(content)\ndata = file.read()\nprint(data)",
+              hi: "from io import StringIO\ncontent = \"Hello World\"\nfile = StringIO(content)\ndata = file.read()\nprint(data)"
+            },
+            solution: {
+              en: "from io import StringIO\ncontent = \"Hello World\"\nfile = StringIO(content)\ndata = file.read()\nprint(data)",
+              hi: "from io import StringIO\ncontent = \"Hello World\"\nfile = StringIO(content)\ndata = file.read()\nprint(data)"
+            },
+            expectedOutput: {
+              en: "Hello World",
+              hi: "Hello World"
+            },
+            hints: [
+              { en: "Use read() method", hi: "read() method use karo" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "exceptions",
+    title: { en: "Exceptions", hi: "Exceptions" },
+    description: { en: "Handling errors with try-except", hi: "Try-except se errors handle karna" },
+    icon: "⚠️",
+    color: "#DC2626",
+    lessons: [
+      {
+        id: "try-except",
+        title: { en: "Try-Except", hi: "Try-Except" },
+        description: { en: "Handling errors gracefully", hi: "Errors gracefully handle karna" },
+        subLessons: [
+          {
+            id: "what-is-exception",
+            title: { en: "What is Exception?", hi: "Exception kya hai?" },
+            content: {
+              en: "Exception ek error hai jo program chalte waqt aata hai. Instead of program crash ho jaye, hum try-except use karke error handle kar sakte hain.",
+              hi: "Exception ek error hai jo program chalte waqt aata hai. Program crash hone ki bajaye, hum try-except use karke error handle kar sakte hain."
+            },
+            codeExample: {
+              en: "try:\n    result = 10 / 0\nexcept:\n    print(\"Error! Cannot divide by zero\")",
+              hi: "try:\n    result = 10 / 0\nexcept:\n    print(\"Error! Zero se divide nahi kar sakte\")"
+            },
+            output: {
+              en: "Error! Cannot divide by zero",
+              hi: "Error! Zero se divide nahi kar sakte"
+            },
+            explanation: {
+              en: "Try-except prevents program from crashing.",
+              hi: "Try-except program crash hone se bachata hai."
+            },
+            quiz: [
+              {
+                question: {
+                  en: "What happens if error occurs in try block?",
+                  hi: "Agar try block mein error aaye toh kya hoga?"
+                },
+                options: [
+                  { en: "Except block runs", hi: "Except block chalega" },
+                  { en: "Program crashes", hi: "Program crash ho jayega" },
+                  { en: "Nothing happens", hi: "Kuch nahi hoga" },
+                  { en: "Try block repeats", hi: "Try block repeat hoga" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "divide-handler",
+            title: { en: "Division Handler", hi: "Division Handler" },
+            description: { en: "Handle division errors", hi: "Division errors handle karo" },
+            starterCode: {
+              en: "try:\n    a = 10\n    b = 0\n    result = a / b\n    print(\"Result:\", result)\nexcept:\n    print(\"Error: Cannot divide by zero\")",
+              hi: "try:\n    a = 10\n    b = 0\n    result = a / b\n    print(\"Result:\", result)\nexcept:\n    print(\"Error: Zero se divide nahi kar sakte\")"
+            },
+            solution: {
+              en: "try:\n    a = 10\n    b = 0\n    result = a / b\n    print(\"Result:\", result)\nexcept:\n    print(\"Error: Cannot divide by zero\")",
+              hi: "try:\n    a = 10\n    b = 0\n    result = a / b\n    print(\"Result:\", result)\nexcept:\n    print(\"Error: Zero se divide nahi kar sakte\")"
+            },
+            expectedOutput: {
+              en: "Error: Cannot divide by zero",
+              hi: "Error: Zero se divide nahi kar sakte"
+            },
+            hints: [
+              { en: "Use except to catch the error", hi: "Error catch karne ke liye except use karo" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "inheritance",
+    title: { en: "Inheritance", hi: "Inheritance" },
+    description: { en: "Learn about class inheritance", hi: "Class inheritance ke baare mein sikhein" },
+    icon: "🧬",
+    color: "#10B981",
+    lessons: [
+      {
+        id: "inheritance-basics",
+        title: { en: "Inheritance Basics", hi: "Inheritance Basics" },
+        description: { en: "Understanding inheritance", hi: "Inheritance samajhna" },
+        subLessons: [
+          {
+            id: "what-is-inheritance",
+            title: { en: "What is Inheritance?", hi: "Inheritance kya hai?" },
+            content: {
+              en: "Inheritance ek feature hai jisme ek class (child) doosri class (parent) ki properties aur methods inherit karta hai. Ye code reuse ke liye useful hai.",
+              hi: "Inheritance ek feature hai jisme ek class (child) doosri class (parent) ki properties aur methods inherit karta hai. Ye code reuse ke liye useful hai."
+            },
+            codeExample: {
+              en: "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof!\"\n\ndog = Dog(\"Buddy\")\nprint(\"Name:\", dog.name)\nprint(\"Sound:\", dog.speak())",
+              hi: "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof!\"\n\ndog = Dog(\"Buddy\")\nprint(\"Naam:\", dog.name)\nprint(\"Sound:\", dog.speak())"
+            },
+            output: {
+              en: "Name: Buddy\nSound: Woof!",
+              hi: "Naam: Buddy\nSound: Woof!"
+            },
+            explanation: {
+              en: "Child class inherits all methods from parent class.",
+              hi: "Child class parent class ki saari methods inherit karta hai."
+            },
+            quiz: [
+              {
+                question: {
+                  en: "What is inheritance?",
+                  hi: "Inheritance kya hai?"
+                },
+                options: [
+                  { en: "Child class gets parent properties", hi: "Child class ko parent ki properties milti hain" },
+                  { en: "Copying a file", hi: "File copy karna" },
+                  { en: "Creating a variable", hi: "Variable banana" },
+                  { en: "Deleting a class", hi: "Class delete karna" }
+                ],
+                correctAnswer: 0
+              }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: "inherit-animal",
+            title: { en: "Animal Inheritance", hi: "Animal Inheritance" },
+            description: { en: "Create child class from parent", hi: "Parent se child class banao" },
+            starterCode: {
+              en: "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow!\"\n\ncat = Cat(\"Whiskers\")\nprint(\"Name:\", cat.name)\nprint(\"Sound:\", cat.speak())",
+              hi: "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow!\"\n\ncat = Cat(\"Whiskers\")\nprint(\"Naam:\", cat.name)\nprint(\"Sound:\", cat.speak())"
+            },
+            solution: {
+              en: "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow!\"\n\ncat = Cat(\"Whiskers\")\nprint(\"Name:\", cat.name)\nprint(\"Sound:\", cat.speak())",
+              hi: "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Cat(Animal):\n    def speak(self):\n        return \"Meow!\"\n\ncat = Cat(\"Whiskers\")\nprint(\"Naam:\", cat.name)\nprint(\"Sound:\", cat.speak())"
+            },
+            expectedOutput: {
+              en: "Name: Whiskers\nSound: Meow!",
+              hi: "Naam: Whiskers\nSound: Meow!"
+            },
+            hints: [
+              { en: "Use class Cat(Animal): to inherit", hi: "Inherit karne ke liye class Cat(Animal): use karo" }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
+    
