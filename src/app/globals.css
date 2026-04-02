@@ -2,10 +2,19 @@
   --bg-primary: #0a0a0f;
   --bg-secondary: #12121a;
   --bg-card: #1a1a24;
+  --bg-card-hover: #22222e;
   --text-primary: #ffffff;
   --text-secondary: #a0a0b0;
+  --text-muted: #6b6b7b;
   --accent: #10b981;
+  --accent-hover: #059669;
   --border: #2a2a3a;
+  --gradient-primary: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  --gradient-card: linear-gradient(145deg, #1a1a24 0%, #12121a 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.15);
 }
 
 * {
@@ -447,6 +456,10 @@ body {
   .sidebar {
     width: 280px;
   }
+  
+  .modules-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -464,15 +477,80 @@ body {
   .header {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
   }
   
   .nav-tabs {
     width: 100%;
+    justify-content: center;
   }
   
   .nav-tab {
     flex: 1;
     text-align: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .content-area {
+    padding: 1rem;
+  }
+  
+  .modules-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .module-card {
+    padding: 1.5rem;
+  }
+  
+  .lesson-tabs {
+    flex-direction: column;
+  }
+  
+  .lesson-tabs .tab {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .sublesson-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+  }
+  
+  .sublesson-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .code-block, .output-block {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .language-toggle {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .module-icon-large {
+    font-size: 2.5rem;
+  }
+  
+  .module-card h3 {
+    font-size: 1.1rem;
   }
 }
 
@@ -832,4 +910,124 @@ body {
 /* Lesson View */
 .lesson-view {
   max-width: 900px;
+}
+
+/* Enhanced Module Cards */
+.module-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-card);
+  z-index: -1;
+}
+
+.module-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.module-icon-large {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Enhanced Buttons */
+.language-toggle {
+  background: var(--gradient-primary) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.language-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.language-toggle:active {
+  transform: translateY(0);
+}
+
+/* Enhanced Quiz */
+.quiz-container {
+  background: var(--gradient-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-option {
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-option::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  transition: width 0.3s ease;
+}
+
+.quiz-option:hover::before {
+  width: 100%;
+}
+
+/* Enhanced Projects */
+.project-card {
+  background: var(--gradient-card);
+  box-shadow: var(--shadow-md);
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* Smooth Animations */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Better scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Focus States */
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
